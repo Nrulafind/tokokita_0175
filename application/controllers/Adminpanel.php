@@ -5,6 +5,9 @@ class Adminpanel extends CI_Controller
 {
     public function dashboard()
     {
+        if (empty($this->session->userdata('username'))) {
+            redirect('adminpanel');
+        }
         $this->template->load('layout_admin', 'admin/dashboard');
     }
     public function index()
