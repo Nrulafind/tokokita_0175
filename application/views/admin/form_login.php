@@ -34,7 +34,7 @@
               </div>
 
               <div class="card-body">
-                <form method="POST" action="<?php echo base_url('login/aksi_login'); ?>" class="needs-validation" novalidate="">
+                <form method="POST" action="<?php echo site_url('login/aksi_login'); ?>" class="needs-validation" novalidate="">
                   <div class="form-group">
                     <label for="email">username</label>
                     <input id="email" type="text" class="form-control" name="username" tabindex="1" required autofocus>
