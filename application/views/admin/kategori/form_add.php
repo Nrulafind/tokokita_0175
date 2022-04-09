@@ -9,10 +9,8 @@
                       <div class="breadcrumb-item">Form</div>
                   </div>
               </div>
-
               <div class="section-body">
                   <h2 class="section-title">Form</h2>
-
                   <div class="row">
                       <div class="col-12 col-md-6 col-lg-6">
                           <form method="POST" action="<?php echo site_url('kategori/save'); ?>">
