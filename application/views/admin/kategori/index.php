@@ -9,7 +9,6 @@
               <div class="breadcrumb-item">Main</div>
             </div>
           </div>
-
           <div class="section-body">
             <h2 class="section-title">Data Kategori</h2>
 

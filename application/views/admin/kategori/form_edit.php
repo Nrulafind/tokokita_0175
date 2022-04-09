@@ -15,28 +15,28 @@
 
                   <div class="row">
                       <div class="col-12 col-md-6 col-lg-6">
-                          <form method="POST" action="<?php echo site_url('kategori/save'); ?>">
-                              <div class="card">
-                                  <div class="card-header">
-                                      <h4>Form Edit Kategori </h4>
-                                  </div>
-                                  <div class="card-body">
-                                      <div class="form-group-row">
-                                          <label for="inputEmail13" class="col-sm-3 col-form-label">Nama Kategori</label>
-                                          <div class="col-sm-9">
-                                              <input type="text" class="form-control" id="inputEmail13" name="namaKategori" placeholder="Nama Kategori" value="<?php echo $kategori->namakat; ?>">
-                                          </div>
+                          <form method="POST" action="<?php echo site_url('kategori/edit'); ?>">
+                              <input type="hidden" name="id" value="<?php echo $kategori->idkat; ?>" <div class="card">
+                              <div class="card-header">
+                                  <h4>Form Edit Kategori </h4>
+                              </div>
+                              <div class="card-body">
+                                  <div class="form-group-row">
+                                      <label for="inputEmail13" class="col-sm-3 col-form-label">Nama Kategori</label>
+                                      <div class="col-sm-9">
+                                          <input type="text" class="form-control" id="inputEmail13" name="namaKategori" placeholder="Nama Kategori" value="<?php echo $kategori->namakat; ?>">
                                       </div>
                                   </div>
-                                  <div class="card-footer ">
-                                      <button type="submit" class="btn btn-primary">Simpan</button>
-                                  </div>
+                              </div>
+                              <div class="card-footer ">
+                                  <button type="submit" class="btn btn-primary">Simpan</button>
                               </div>
                       </div>
-                      </tbody>
-                      </table>
                   </div>
+                  </tbody>
+                  </table>
               </div>
+      </div>
       </div>
       </div>
       </div>
