@@ -41,5 +41,6 @@ class Kategori extends CI_Controller
     {
         $datawhere = array('idkat' => $id);
         $this->Mcrud->delete('tbl_kategori', $datawhere, 'idkat', $id);
+        redirect('kategori');
     }
 }
