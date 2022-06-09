@@ -24,4 +24,13 @@ class Mcrud extends CI_Model
         $this->db->where($pk, $id);
         $this->db->delete($tabel, $data);
     }
+    public function get_all_data_3table($table1, $table2, $table3, $data1, $data2, $data3, $data4)
+    {
+        $this->db->select("idBiayaKirim,b.namaKota,c.namaKota AS 'Kota Tujuan',a.namaKurir,biaya ");
+        $this->db->from($table1); // this is first table name
+        $this->db->join($table2 . ' AS a', $table1 . '.' . $data2 . '=' . 'a' . '.' . $data2); // this is second table name with both table ids
+        $this->db->join($table3 . ' AS b', $table1 . '.' . $data1 . '=' . 'b' . '.' . $data3); // this is second table name with both table ids
+        $this->db->join($table3 . ' AS c', $table1 . '.' . $data4 . '=' . 'c' . '.' . $data3); // this is second table name with both table ids
+        return $this->db->get();
+    }
 }

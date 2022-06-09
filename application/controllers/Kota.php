@@ -9,24 +9,24 @@ class Kota extends CI_Controller
     public function index()
     {
         $data['kota'] = $this->Mcrud->get_all_data('tbl_kota')->result();
-        $this->template->load('layout_admin', 'admin/kelola_ongkir/index_kota', $data);
+        $this->template->load('layout_admin', 'admin/kelola_ongkir/kota/index_kota', $data);
     }
     public function add()
     {
-        $this->template->load('layout_admin', 'admin/kelola_ongkir/add_kota');
+        $this->template->load('layout_admin', 'admin/kelola_ongkir/kota/add_kota');
     }
     public function save()
     {
         $namaKota = $this->input->post('namaKota');
         $dataInsert = array('namaKota' => $namaKota);
         $this->Mcrud->insert('tbl_kota', $dataInsert);
-        redirect('kota');
+        redirect('index_kota');
     }
     public function getid($id)
     {
         $datawhere = array('idKota' => $id);
         $data['kota'] = $this->Mcrud->get_by_id('tbl_kota', $datawhere)->row_object();
-        $this->template->load('layout_admin', 'admin/kelola_ongkir/edit_kota', $data);
+        $this->template->load('layout_admin', 'admin/kelola_ongkir/kota/edit_kota', $data);
     }
     public function edit()
     {
@@ -34,12 +34,12 @@ class Kota extends CI_Controller
         $namaKota = $this->input->post('namaKota');
         $dataUpdate = array('namaKota' => $namaKota);
         $this->Mcrud->update('tbl_kota', $dataUpdate, 'idKota', $id);
-        redirect('kota');
+        redirect('index_kota');
     }
     public function delete($id)
     {
         $datawhere = array('idKota' => $id);
         $this->Mcrud->delete('tbl_kota', $datawhere);
-        redirect('kota');
+        redirect('index_kota');
     }
 }
