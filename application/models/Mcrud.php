@@ -33,4 +33,10 @@ class Mcrud extends CI_Model
         $this->db->join($table3 . ' AS c', $table1 . '.' . $data4 . '=' . 'c' . '.' . $data3); // this is second table name with both table ids
         return $this->db->get();
     }
+    public function get_all_produk_terbaru()
+    {
+        $this->db->order_by('idProduk', 'DESC');
+        $this->db->limit(4);
+        return $this->db->get('tbl_produk');
+    }
 }

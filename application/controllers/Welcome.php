@@ -1,7 +1,8 @@
 <?php
-defined('BASEPATH') OR exit('No direct script access allowed');
+defined('BASEPATH') or exit('No direct script access allowed');
 
-class Welcome extends CI_Controller {
+class Welcome extends CI_Controller
+{
 
 	/**
 	 * Index Page for this controller.
@@ -21,5 +22,29 @@ class Welcome extends CI_Controller {
 	public function index()
 	{
 		$this->load->view('welcome_message');
+	}
+	public function streamer()
+	{
+		$stemmerFactory = new \Sastrawi\Stemmer\StemmerFactory();
+		$stemmer  = $stemmerFactory->createStemmer();
+
+		// stem
+		$sentence = 'Perekonomian Indonesia sedang dalam pertumbuhan yang membanggakan';
+		$output   = $stemmer->stem($sentence);
+
+		echo $output . "\n";
+		// ekonomi indonesia sedang dalam tumbuh yang bangga
+
+		echo $stemmer->stem('Mereka meniru-nirukannya') . "\n";
+	}
+	public function stopword()
+	{
+
+		//stopword
+		$sentence = 'Perekonomian Indonesia sedang dalam pertumbuhan ';
+		$stopWordRemoverFactory = new \Sastrawi\StopWordRemover\StopWordRemoverFactory();
+		$stopword = $stopWordRemoverFactory->createStopWordRemover();
+		$outputstopword = $stopword->remove($sentence);
+		echo $outputstopword;
 	}
 }
